@@ -69,6 +69,13 @@
   .BR{border-right:solid 1px #000}
   .BT1{border-top:dashed 1px #000}
   .BT2{border-top:solid 2px #000}
+  .BOnly{
+      border-bottom:solid 1px #000;
+      border-left:solid 1px #000;
+      border-right:solid 1px #000;
+      border-top:solid 1px #000;
+      border-radius: 10px
+  }
   .h1{height:1px}
   .h13{height:13px}
   .h12{height:12px}
@@ -113,7 +120,7 @@
   .w666{width:666px}
   .w667{width:667px}
   .BHead td{border-bottom:solid 2px #000}
-  .EcdBar{height:50px;vertical-align:bottom}
+  .EcdBar{height:50px;vertical-align:top}
   .rc6 td{vertical-align:top;border-bottom:solid 1px #000;border-left:solid 1px #000;border-right: 0.5px solid #000;}
   .rc6 div{padding-left:6px}
   .rc6 .t{font:9px "arial narrow";color:#000033;height:13px}
@@ -121,9 +128,9 @@
   .mt23{margin-top:23px;}
   .pb4{padding-bottom:14px;}
   .ebc{width:4px;height:440px;border-right:dotted 1px #000000;margin-right:4px;}
-  .qrCode img{width:80px;height:80px}
+  .qrCode img{width:140px;height:140px}
   .qrCode {text-align: center}
-  .ctNQrCode{font:11px "arial narrow";color:#000033}
+  .ctNQrCode{font:bold 15px arial;color:black}
   <% if (barcode_render_engine == 'bmp') { %>
 	.barcode {
 		background-image: url(data:image/bmp;base64,<%= barcode_data %>);
@@ -372,9 +379,9 @@
 			<% } %>
 		  </td>
             <td>
-                <div class="ctNQrCode qrCode">
+                <div class="ctNQrCode qrCode BOnly">
                     <% if (boleto['qrcode_url']) { %>
-                        <div class="t">Pague com qrCode</div>
+                        <div class="t">Pague com QRCode</div>
                         <img src="<%= boleto['qrcode_url'] %>" />
                         <div class="t">Confirmação imediata!</div>
                     <% } else {} %>
