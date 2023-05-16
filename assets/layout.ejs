@@ -87,6 +87,8 @@
   .w45{width:45px}
   .w53{width:53px}
   .w62{width:62px}
+  .w50{width: 50px}
+  .w52{width:52px}
   .w65{width:65px}
   .w72{width:72px}
   .w83{width:83px}
@@ -111,8 +113,9 @@
   .w250{width:250px}
   .w298{width:298px}
   .w409{width:409px}
-  .w472{width:472px}
+  .w472{width:483px}
   .w478{width:478px}
+  .w483{width:483px}
   .w500{width:500px}
   .w544{width:544px}
   .w564{width:564px}
@@ -269,7 +272,7 @@
         </tr>
     </table><table class="w666">
         <tr class="ct h13">
-            <td class="w472">Local de pagamento</td>
+            <td class="w483">Local de pagamento</td>
             <td class="w180">Vencimento</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -278,7 +281,7 @@
         </tr>
     </table><table class="w666">
         <tr class="ct h13">
-            <td class="w472">Beneficiário</td>
+            <td class="w483">Beneficiário</td>
             <td class="w180">Agência / Código beneficiário</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -291,7 +294,7 @@
             <td class="w163">N<u>o</u> documento</td>
             <td class="w62">Espécie doc.</td>
             <td class="w34">Aceite</td>
-            <td class="w72">Data processamento</td>
+            <td class="w50">Data processamento</td>
             <td class="w180">Carteira / Nosso número</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -308,7 +311,7 @@
             <td class="w83">Carteira</td>
             <td class="w53">Espécie</td>
             <td class="w123">Quantidade</td>
-            <td class="w72">(x) Valor</td>
+            <td class="w52">(x) Valor</td>
             <td class="w180">(=) Valor documento</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -339,20 +342,15 @@
             </td>
         </tr>
     </table><table class="w666">
-        <tr class="ct h13">
-            <td class="w659">Pagador</td>
-        </tr>
-        <tr class="cp h12">
-			<td class="At"><%- boleto['pagador'] || '' %></td>
-        </tr>
-    </table><table class="w666">
-        <tr class="rBb">
-            <td class="w478 BL">
-                <div class="cpN pL6"></div>
+        <tr class="rc6">
+            <td>
+                <div class="ctN pL10">Pagador</div>
+                <div class="cpN pL10"><%- boleto['pagador'] || '' %></div>
             </td>
-            <td class="Ab BL">
-                <div class="ctN pL6">Cód. baixa</div>
+            <td class="w186 Ab BL">
+                <div class="ctN pL6 rc6">Cód. baixa</div>
             </td>
+
         </tr>
     </table><table class="w666 ctN">
         <tr>
@@ -383,7 +381,8 @@
                     <% if (boleto['qrcode_url']) { %>
                         <div class="t">Pague com QRCode</div>
                         <img src="<%= boleto['qrcode_url'] %>" />
-                        <div class="t">Confirmação imediata!</div>
+                        <div class="t">Confirmação imediata</div>
+                        <div class="t">para o cartório!</div>
                     <% } else {} %>
                 </div>
             </td>
