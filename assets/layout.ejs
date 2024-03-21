@@ -372,11 +372,19 @@
 			<% } %>
 		  </td>
             <td>
-                <div class="ctNQrCode qrCode">
+                <div class="ctNQrCode qrCode BOnly">
                     <% if (boleto['qrcode_url']) { %>
-                        <div class="t">Pague com qrCode</div>
-                        <img src="<%= boleto['qrcode_url'] %>" />
-                        <div class="t">Confirmação imediata!</div>
+                        <% if (boleto['payment_link_url']) %>
+                            <div class="t">Acesse o QRCode</div>
+                            <img src="<%= boleto['qrcode_url'] %>" />
+                            <div class="t">E pague por PIX</div>
+                            <div class="t">ou parcelado em até 12X</div>
+                        <% } else { %>
+                            <div class="t">Pague com QRCode</div>
+                            <img src="<%= boleto['qrcode_url'] %>" />
+                            <div class="t">Confirmação imediata</div>
+                            <div class="t">para o cartório!</div>
+                        <% } %>
                     <% } else {} %>
                 </div>
             </td>
