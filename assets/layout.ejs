@@ -374,7 +374,7 @@
             <td>
                 <div class="ctNQrCode qrCode BOnly">
                     <% if (boleto['qrcode_url']) { %>
-                        <% if (boleto['payment_link_url']) %>
+                        <% if (boleto['payment_link_url']) { %>
                             <div class="t">Acesse o QRCode</div>
                             <img src="<%= boleto['qrcode_url'] %>" />
                             <div class="t">E pague por PIX</div>
