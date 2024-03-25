@@ -44,7 +44,7 @@
   }
   .bc
   {
-	  font: bold 22px arial;
+	  font: bold 16px arial;
 	  color: #000000
   }
 
@@ -61,7 +61,7 @@
   .pL6{padding-left:6px}
   .pL10{padding-left:10px}
   .imgLogo{width:150px}
-  .imgLogo img{width:150px;height:40px}
+  .imgLogo img{width:150px;height:30px}
   .barra{width:2px;height:15px;;background-color:#000;}
   .rBb td{border-bottom:solid 1px #000}
   .BB{border-bottom:solid 1px #000}
@@ -69,6 +69,13 @@
   .BR{border-right:solid 1px #000}
   .BT1{border-top:dashed 1px #000}
   .BT2{border-top:solid 2px #000}
+  .BOnly{
+      border-bottom:solid 1px #000;
+      border-left:solid 1px #000;
+      border-right:solid 1px #000;
+      border-top:solid 1px #000;
+      border-radius: 10px
+  }
   .h1{height:1px}
   .h13{height:13px}
   .h12{height:12px}
@@ -80,6 +87,8 @@
   .w45{width:45px}
   .w53{width:53px}
   .w62{width:62px}
+  .w50{width: 50px}
+  .w52{width:52px}
   .w65{width:65px}
   .w72{width:72px}
   .w83{width:83px}
@@ -104,8 +113,9 @@
   .w250{width:250px}
   .w298{width:298px}
   .w409{width:409px}
-  .w472{width:472px}
+  .w472{width:483px}
   .w478{width:478px}
+  .w483{width:483px}
   .w500{width:500px}
   .w544{width:544px}
   .w564{width:564px}
@@ -113,7 +123,7 @@
   .w666{width:666px}
   .w667{width:667px}
   .BHead td{border-bottom:solid 2px #000}
-  .EcdBar{height:50px;vertical-align:bottom}
+  .EcdBar{height:50px;vertical-align:top}
   .rc6 td{vertical-align:top;border-bottom:solid 1px #000;border-left:solid 1px #000;border-right: 0.5px solid #000;}
   .rc6 div{padding-left:6px}
   .rc6 .t{font:9px "arial narrow";color:#000033;height:13px}
@@ -121,9 +131,9 @@
   .mt23{margin-top:23px;}
   .pb4{padding-bottom:14px;}
   .ebc{width:4px;height:440px;border-right:dotted 1px #000000;margin-right:4px;}
-  .qrCode img{width:80px;height:80px}
+  .qrCode img{width:110px;height:110px}
   .qrCode {text-align: center}
-  .ctNQrCode{font:11px "arial narrow";color:#000033}
+  .ctNQrCode{font:bold 10px arial;color:black}
   <% if (barcode_render_engine == 'bmp') { %>
 	.barcode {
 		background-image: url(data:image/bmp;base64,<%= barcode_data %>);
@@ -153,33 +163,11 @@
 </head>
 <body>
 	<div>
-	<table class="w666">
-        <tr class="cpN">
-            <td class="At Ac">Instruções de Impressão</td>
-        </tr>
-        <tr class="ti">
-            <td class="At Ac">Imprimir em impressora jato de tinta (ink jet) ou laser em qualidade normal. (Não use modo econômico).<br>Utilize folha A4 (210 x 297 mm) ou Carta (216 x 279 mm) - Corte na linha indicada<br></td>
-        </tr>
-        <tr class="ti">
-            <td class="At Ac">
-				<br/>
-				<form>
-					<input class="no-print" type="button" value="Clique aqui para imprimir" onclick="window.print();return false;" />
-				</form>
-			</td>
-        </tr>
-    </table><br /><table class="w666">
-        <tr>
-            <td class="ctN cut" />
-        </tr>
-        <tr>
-            <td class="cpN Ar">Recibo do Pagador</td>
-        </tr>
-    </table><br /><table class="w666">
+        <br /><table class="w666">
         <tr class="BHead">
 			<td class="imgLogo Al"><img src="<%= logoURL %>" /></td>
             <td class="barra"></td>
-			<td class="w72 Ab bc Ac"><%= boleto['codigo_banco'] %></td>
+			<td class="w62 Ab bc Ac"><%= boleto['codigo_banco'] %></td>
             <td class="barra"></td>
 			<td class="w500 Ar Ab ld" id="linha-digitavel-1"><%= boleto['linha_digitavel'] %></td>
         </tr>
@@ -262,7 +250,7 @@
         </tr>
     </table><table class="w666">
         <tr class="ct h13">
-            <td class="w472">Local de pagamento</td>
+            <td class="w483">Local de pagamento</td>
             <td class="w180">Vencimento</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -271,7 +259,7 @@
         </tr>
     </table><table class="w666">
         <tr class="ct h13">
-            <td class="w472">Beneficiário</td>
+            <td class="w483">Beneficiário</td>
             <td class="w180">Agência / Código beneficiário</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -284,7 +272,7 @@
             <td class="w163">N<u>o</u> documento</td>
             <td class="w62">Espécie doc.</td>
             <td class="w34">Aceite</td>
-            <td class="w72">Data processamento</td>
+            <td class="w50">Data processamento</td>
             <td class="w180">Carteira / Nosso número</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -301,7 +289,7 @@
             <td class="w83">Carteira</td>
             <td class="w53">Espécie</td>
             <td class="w123">Quantidade</td>
-            <td class="w72">(x) Valor</td>
+            <td class="w52">(x) Valor</td>
             <td class="w180">(=) Valor documento</td>
         </tr>
         <tr class="cp h12 rBb">
@@ -332,20 +320,15 @@
             </td>
         </tr>
     </table><table class="w666">
-        <tr class="ct h13">
-            <td class="w659">Pagador</td>
-        </tr>
-        <tr class="cp h12">
-			<td class="At"><%- boleto['pagador'] || '' %></td>
-        </tr>
-    </table><table class="w666">
-        <tr class="rBb">
-            <td class="w478 BL">
-                <div class="cpN pL6"></div>
+        <tr class="rc6">
+            <td>
+                <div class="ctN pL10">Pagador</div>
+                <div class="cpN pL10"><%- boleto['pagador'] || '' %></div>
             </td>
-            <td class="Ab BL">
-                <div class="ctN pL6">Cód. baixa</div>
+            <td class="w186 Ab BL">
+                <div class="ctN pL6 rc6">Cód. baixa</div>
             </td>
+
         </tr>
     </table><table class="w666 ctN">
         <tr>
