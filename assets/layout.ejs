@@ -406,6 +406,10 @@
             color: black
         }
 
+        .dLeftMargin {
+            padding-left: 20px;
+        }
+
         <% if (barcode_render_engine=='bmp') {
             %>.barcode {
                 background-image: url(data:image/bmp;base64,<%= barcode_data %>);
@@ -444,7 +448,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="dLeftMargin">
         <br />
         <% if (!boleto['reduce_layout']) { %>
         <table class="w666">
