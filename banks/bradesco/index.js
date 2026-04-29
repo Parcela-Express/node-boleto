@@ -3,7 +3,7 @@ var formatters = require('../../lib/formatters')
 var ediHelper = require('../../lib/edi-helper')
 
 exports.options = {
-  logoURL: 'https://assets.pagar.me/boleto/images/bradesco.jpg',
+  logoURL: 'https://parcelaexpress-all-pos-web.s3.amazonaws.com/logo/bradesco.jpg',
   codigo: '237'
 }
 
